@@ -1,0 +1,107 @@
+CREATE SCHEMA IF NOT EXISTS onlineBankingSystem;
+SET search_path = onlineBankingSystem;
+
+CREATE DOMAIN sex AS CHAR(1) DEFAULT 'M' CHECK (value IN ('F', 'M'));
+CREATE DOMAIN DOB as date CONSTRAINT con_DOB CHECK (value > to_date('01-01-1900','dd-mm-yyyy'));
+
+CREATE TABLE Person (
+  CPR_No      char (11),
+  fName       VARCHAR(20),
+  lName       VARCHAR(20),
+  DOB         date,
+  Gender      SEX,
+  address     VARCHAR(40),
+  phoneNo     VARCHAR(20),
+  postal_code  NUMERIC(10),
+  city	      VARCHAR(20),
+  country     VARCHAR(20),
+  email       VARCHAR(30),
+  nationality VARCHAR(20),
+  PRIMARY KEY (CPR_No)
+);
+
+
+CREATE TABLE Admin (
+  CPR_No CHAR(11) REFERENCES person(cpr_no),
+  empNo  SERIAL UNIQUE,
+  PRIMARY KEY (CPR_No, empNo)
+);
+
+
+CREATE TABLE Customer (
+  CPR_No CHAR(11) REFERENCES person(cpr_no),
+  PRIMARY KEY (cpr_no)
+);
+
+
+CREATE TABLE Account (
+  Id            SERIAL,
+  accNo         VARCHAR(11),
+  regNo         VARCHAR(4),
+  AccName       VARCHAR(40),
+  balance       DECIMAL(20, 2),
+  transferLimit DECIMAL(15),
+  creditLimit   DECIMAL(15),
+  PRIMARY KEY (regNo,accNo));
+
+CREATE TABLE customer_account (
+  CPR_No CHAR(11) REFERENCES Customer (CPR_No),
+  regNo VARCHAR(4),
+  accNo VARCHAR(40),
+  PRIMARY KEY (CPR_No,regNo,accNo),
+  FOREIGN KEY (regNo,accNo) REFERENCES Account(regNo,accNo)
+);
+
+CREATE TABLE  user_credentials(
+  CPR_No    CHAR(11) REFERENCES person(CPR_No) ,
+  user_name VARCHAR(40),
+  password  VARCHAR(20),
+  PRIMARY KEY (CPR_No,user_name,password)
+);
+
+CREATE TABLE NEM_ID(
+  CPR_No CHAR (11) REFERENCES person(CPR_No),
+  key CHAR(4),
+  value CHAR(6),
+  PRIMARY KEY (CPR_No,key,value)
+);
+
+CREATE TABLE tobe_transfered(
+  transferID SERIAL,
+  accNo1 VARCHAR(40),
+  regNo1 VARCHAR(4) ,
+  accNo2 VARCHAR(40),
+  reg_No2 VARCHAR(4),
+  description VARCHAR(40),
+  date date,
+  money_transfered NUMERIC(20) NOT NULL ,
+  PRIMARY KEY (transferID),
+  FOREIGN KEY (accNo1,regNo1) REFERENCES Account(accNo,regNo),
+  FOREIGN KEY (accNo2,reg_No2) REFERENCES Account(accNo,regNo)
+);
+
+CREATE TABLE transaction(
+  transferID SERIAL,
+  accNo1 VARCHAR(40),
+  regNo1 VARCHAR(4) ,
+  accNo2 VARCHAR(40),
+  regNo2 VARCHAR(4),
+  description VARCHAR(40),
+  date date,
+  money_transfered DECIMAL(20,2) NOT NULL ,
+  PRIMARY KEY (transferID),
+  FOREIGN KEY (accNo1,regNo1) REFERENCES Account(accNo,regNo),
+  FOREIGN KEY (accNo2,regNo2) REFERENCES Account(accNo,regNo)
+);
+
+CREATE TABLE saved_transaction(
+  CPR_No CHAR(11),
+  accNo VARCHAR(40),
+  regNo VARCHAR(4),
+  description VARCHAR(40),
+  date date,
+  money_transfered DECIMAL(20,2) NOT NULL ,
+  FOREIGN KEY (CPR_No) REFERENCES Customer(CPR_No),
+  FOREIGN KEY (accNo,regNo) REFERENCES Account(accNo,regNo),
+  PRIMARY KEY (CPR_No,accNo,regNo)
+);
