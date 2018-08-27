@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.view.admin.menu.MenuNavigation">
+   <children>
+      <GridPane layoutX="12.0" layoutY="116.0" prefHeight="310.0" prefWidth="177.0" AnchorPane.bottomAnchor="174.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="116.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <JFXButton onAction="#showCreateNewUser" prefHeight="32.0" prefWidth="187.0" style="-fx-background-color: #0ba0dd#0ba0dd; -fx-background-radius: 45px;" text="Create new User" textFill="#fffafa" />
+            <JFXButton onAction="#showAddAccount" prefHeight="32.0" prefWidth="179.0" style="-fx-background-color: #0ba0dd#0ba0dd; -fx-background-radius: 45px;" text="Add Account" textFill="#fffafa" GridPane.rowIndex="1" />
+            <JFXButton onAction="#showAssignAccToCus" prefHeight="32.0" prefWidth="179.0" style="-fx-background-color: #0ba0dd#0ba0dd; -fx-background-radius: 45px;" text="Assign Account to Customer" textFill="#fffafa" GridPane.rowIndex="2" />
+            <JFXButton onAction="#logOut" prefHeight="32.0" prefWidth="179.0" style="-fx-background-color: #0ba0dd#0ba0dd; -fx-background-radius: 45px;" text="Logout" textFill="#fffafa" GridPane.rowIndex="4" />
+            <JFXButton onAction="#showSearch" prefHeight="32.0" prefWidth="179.0" style="-fx-background-color: #0ba0dd#0ba0dd; -fx-background-radius: 45px;" text="Search" textFill="#fffafa" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <ImageView fitHeight="88.0" fitWidth="92.0" layoutX="56.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../resources/images/ContentImageHandler.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

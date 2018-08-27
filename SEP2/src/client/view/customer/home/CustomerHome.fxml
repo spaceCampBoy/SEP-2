@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="402.0" prefWidth="648.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.view.customer.home.CustomerHome">
+   <children>
+      <Label alignment="CENTER" layoutX="1.0" layoutY="10.0" prefHeight="46.0" prefWidth="647.0" text="Accounts" textFill="#0ba0dd">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+      <JFXListView fx:id="listView" layoutX="77.0" layoutY="67.0" prefHeight="326.0" prefWidth="556.0" />
+      <JFXButton fx:id="updateButton" layoutX="470.0" layoutY="21.0" onAction="#handleUpdate" prefHeight="25.0" prefWidth="163.0" style="-fx-background-color: #0ba0dd#0ba0dd;" text="Check for new transactions" textFill="#f5f5f5" />
+   </children>
+</AnchorPane>

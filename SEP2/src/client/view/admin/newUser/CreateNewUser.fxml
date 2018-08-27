@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="453.0" prefWidth="641.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.view.admin.newUser.CreateNewUser">
+   <children>
+      <Label alignment="TOP_CENTER" layoutY="14.0" opacity="0.78" prefHeight="57.0" prefWidth="641.0" text="Create New User" textAlignment="CENTER" textFill="#0ba0dd" wrapText="true">
+         <font>
+            <Font name="SansSerif Regular" size="36.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="firstNameField" focusColor="#08aee1" layoutX="52.0" layoutY="117.0" opacity="0.5" prefHeight="27.0" prefWidth="151.0" unFocusColor="#222121" />
+      <Label alignment="TOP_LEFT" disable="true" layoutX="52.0" layoutY="99.0" prefHeight="18.0" prefWidth="151.0" text="First Name" textAlignment="CENTER" wrapText="true" />
+      <JFXTextField fx:id="lastNameField" focusColor="#08aee1" layoutX="52.0" layoutY="178.0" opacity="0.52" prefHeight="27.0" prefWidth="151.0" />
+      <Label disable="true" layoutX="51.0" layoutY="160.0" prefHeight="18.0" prefWidth="159.0" text="Last Name" textAlignment="CENTER" textFill="#54595b" wrapText="true" />
+      <Label disable="true" layoutX="52.0" layoutY="222.0" text="Birthday " />
+      <Label disable="true" layoutX="52.0" layoutY="289.0" prefHeight="18.0" prefWidth="57.0" text="City" textFill="#737575" wrapText="true" />
+      <JFXTextField fx:id="cityField" focusColor="#08aee1" layoutX="51.0" layoutY="298.0" opacity="0.5" prefHeight="26.0" prefWidth="159.0" />
+      <Label disable="true" layoutX="52.0" layoutY="340.0" opacity="0.52" prefHeight="18.0" prefWidth="78.0" text="Address" textFill="#969797" />
+      <JFXTextField fx:id="addressField" focusColor="#08aee1" layoutX="51.0" layoutY="358.0" opacity="0.52" prefHeight="25.0" prefWidth="159.0" />
+      <JFXTextField fx:id="phoneField" focusColor="#08aee1" layoutX="274.0" layoutY="183.0" opacity="0.52" prefHeight="26.0" prefWidth="159.0" />
+      <Label disable="true" layoutX="274.0" layoutY="169.0" opacity="0.52" prefHeight="17.0" prefWidth="93.0" text="Phone Number" textFill="#838181" wrapText="true" />
+      <Label disable="true" layoutX="277.0" layoutY="99.0" opacity="0.52" prefHeight="17.0" prefWidth="66.0" text="Postalcode" textFill="#747575" />
+      <JFXTextField fx:id="postalCodeField" focusColor="#08aee1" layoutX="270.0" layoutY="118.0" opacity="0.52" prefHeight="25.0" prefWidth="151.0" />
+      <Label disable="true" layoutX="483.0" layoutY="99.0" text="CPR - NR" />
+      <JFXTextField fx:id="cprNoField" focusColor="#08aee1" layoutX="480.0" layoutY="118.0" opacity="0.52" prefHeight="25.0" prefWidth="151.0" />
+      <JFXButton layoutX="418.0" layoutY="373.0" onAction="#handleCreateNewUser" prefHeight="32.0" prefWidth="99.0" style="-fx-background-color: #0ba0dd#0ba0dd; -fx-background-radius: 45px;" text="Submit" textFill="#f8f1f1" />
+      <JFXButton layoutX="268.0" layoutY="373.0" onAction="#handleReset" prefHeight="32.0" prefWidth="105.0" style="-fx-background-color: #0ba0dd#0ba0dd; -fx-background-radius: 45px;" text="Reset" textFill="#fffafa" />
+      <Label layoutX="490.0" layoutY="169.0" opacity="0.52" prefHeight="0.0" prefWidth="66.0" text="Email" />
+      <JFXTextField fx:id="emailField" focusColor="#08aee1" layoutX="480.0" layoutY="183.0" opacity="0.51" prefHeight="25.0" prefWidth="151.0" />
+      <Label disable="true" layoutX="484.0" layoutY="231.0" prefHeight="18.0" prefWidth="105.0" text="Nationality" />
+      <Label disable="true" layoutX="278.0" layoutY="227.0" prefHeight="18.0" prefWidth="47.0" text="Gender" />
+      <Label disable="true" layoutX="280.0" layoutY="289.0" opacity="0.51" prefHeight="18.0" prefWidth="138.0" text="Country" />
+      <JFXTextField fx:id="countryField" focusColor="#08aee1" layoutX="278.0" layoutY="312.0" opacity="0.52" />
+      <JFXTextField fx:id="birthdayField" focusColor="#08aee1" layoutX="52.0" layoutY="238.0" opacity="0.52" prefHeight="25.0" prefWidth="151.0" />
+      <ChoiceBox fx:id="genderField" layoutX="271.0" layoutY="251.0" prefHeight="25.0" prefWidth="159.0" />
+      <JFXTextField fx:id="nationalityField" focusColor="#08aee1" layoutX="480.0" layoutY="251.0" opacity="0.51" prefHeight="25.0" prefWidth="151.0" />
+      <JFXRadioButton fx:id="customerRadioButton" layoutX="461.0" layoutY="303.0" opacity="0.4" selected="true" style="-jfx-selected-color: #066FA5#066FA5;" text="Customer">
+         <toggleGroup>
+            <ToggleGroup fx:id="group" />
+         </toggleGroup>
+      </JFXRadioButton>
+      <JFXRadioButton fx:id="adminRadioButton" layoutX="461.0" layoutY="332.0" opacity="0.4" prefHeight="17.0" prefWidth="119.0" style="-jfx-selected-color: #066FA5;" text="Administrator" toggleGroup="$group" />
+   </children>
+</AnchorPane>

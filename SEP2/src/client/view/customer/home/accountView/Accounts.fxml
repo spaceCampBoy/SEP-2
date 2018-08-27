@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="73.0" prefWidth="499.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.view.customer.home.accountView.Accounts">
+   <children>
+      <JFXButton layoutX="410.0" layoutY="-2.0" onAction="#handleShow" prefHeight="75.0" prefWidth="104.0" style="-fx-background-color: #0ba0dd#0ba0dd #0ba0dd#0ba0dd; -fx-background-radius: 0;" text="See &#10;Transactions" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="regNoLabel" layoutX="6.0" layoutY="4.0" prefHeight="20.0" prefWidth="124.0" text="9522   8987645679">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font></Label>
+      <Label fx:id="nameLabel" layoutX="7.0" layoutY="26.0" prefHeight="45.0" prefWidth="217.0" text="Savings">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="balanceLabel" alignment="CENTER_RIGHT" layoutX="221.0" layoutY="26.0" prefHeight="44.0" prefWidth="181.0" text="Balance">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="sharedWithLabel" layoutX="158.0" layoutY="6.0" text="Shared with:" />
+      <ChoiceBox fx:id="sharedWithBox" layoutX="235.0" layoutY="2.0" prefHeight="25.0" prefWidth="167.0" />
+   </children>
+</AnchorPane>

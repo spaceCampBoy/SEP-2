@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="60.0" prefWidth="579.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.view.customer.home.transactions.transactionsView.Transactions">
+   <children>
+      <ImageView fx:id="image" fitHeight="60.0" fitWidth="60.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="dateLabel" layoutX="66.0" layoutY="22.0" text="01/01/2017">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="regNoLabel" alignment="CENTER" layoutX="144.0" layoutY="14.0" prefHeight="17.0" prefWidth="74.0" text="9522" />
+      <Label fx:id="accNoLabel" alignment="CENTER" layoutX="143.0" layoutY="31.0" prefHeight="17.0" prefWidth="80.0" text="15862931292" />
+      <Label fx:id="descriptionLabel" layoutX="231.0" layoutY="22.0" prefHeight="17.0" prefWidth="201.0" text="Description" />
+      <Label fx:id="amountLabel" layoutX="435.0" layoutY="23.0" prefHeight="17.0" prefWidth="140.0" text="1000 DKK">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
